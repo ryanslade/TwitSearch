@@ -9,6 +9,7 @@
 #import "SearchResultsViewController.h"
 #import "JSONKit.h"
 #import "WebViewController.h"
+#import "TwitTableViewCell.h"
 
 @interface SearchResultsViewController()
 
@@ -49,14 +50,12 @@
 
 #pragma mark - View lifecycle
 
-- (void) refreshTwits
+- (void) getTwits
 {
     [[NSOperationQueue mainQueue] addOperationWithBlock:^
      {
          [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
      }];
-    
-    sleep(5);
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://search.twitter.com/search.json?q=%@", self.searchTerm]];
     NSString *JSONString = [[NSString alloc] initWithContentsOfURL:url];
@@ -74,10 +73,17 @@
     self.twits = [JSONData valueForKey:@"results"];
     
     [[NSOperationQueue mainQueue] addOperationWithBlock:^
-    {
-        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-        [self.tableView reloadData];
-        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+     {
+         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+         [self.tableView reloadData];
+         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+     }];
+}
+
+- (void) refreshTwits
+{
+    [self.operationQueue addOperationWithBlock:^{
+        [self getTwits];
     }];
 }
 
@@ -95,9 +101,7 @@
         self.operationQueue.maxConcurrentOperationCount = 2;
     }
     
-    [self.operationQueue addOperationWithBlock:^{
-        [self refreshTwits];
-    }];
+    [self refreshTwits];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
@@ -152,24 +156,40 @@
     return [self.twits count];
 }
 
+- (UIFont*) getDetailFont
+{
+    
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
-        cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:14];
-        cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
-        cell.textLabel.numberOfLines = NSIntegerMax;
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell = [[[TwitTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
     // Configure the cell...
     NSDictionary *twit = [self.twits objectAtIndex:[indexPath row]];
-    cell.textLabel.text = [twit valueForKeyPath:@"text"];
+    cell.textLabel.text = [NSString stringWithFormat:@"@%@", [twit valueForKey:@"from_user"]];
+    cell.detailTextLabel.text = [twit valueForKey:@"text"];
     
     return cell;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *twit = [self.twits objectAtIndex:[indexPath row]];
+    NSString *text = [twit valueForKey:@"text"];
+    NSString *userName = [twit valueForKey:@"from_user"];
+    
+    CGSize boundingSize = CGSizeMake(self.tableView.frame.size.width-40, CGFLOAT_MAX);
+    
+    CGFloat detailHeight = [text sizeWithFont:[TwitTableViewCell detailFont] constrainedToSize:boundingSize lineBreakMode:UILineBreakModeWordWrap].height;
+    CGFloat textHeight = [userName sizeWithFont:[TwitTableViewCell textFont] constrainedToSize:boundingSize lineBreakMode:UILineBreakModeWordWrap].height;
+    
+    return detailHeight + textHeight + 10;
 }
 
 /*

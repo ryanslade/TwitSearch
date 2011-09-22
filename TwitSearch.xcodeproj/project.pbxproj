@@ -16,6 +16,7 @@
 		907E0D0F142B2DBB00637571 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907E0D0D142B2DBB00637571 /* MainWindow.xib */; };
 		907E0D1E142B2E3000637571 /* SearchInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 907E0D1C142B2E3000637571 /* SearchInputViewController.m */; };
 		907E0D1F142B2E3000637571 /* SearchInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907E0D1D142B2E3000637571 /* SearchInputViewController.xib */; };
+		90B4183C142B6E900039E554 /* TwitTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 90B4183B142B6E900039E554 /* TwitTableViewCell.m */; };
 		90D48881142B334200E43AB2 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D4887F142B334200E43AB2 /* SearchResultsViewController.m */; };
 		90D48882142B334200E43AB2 /* SearchResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90D48880142B334200E43AB2 /* SearchResultsViewController.xib */; };
 		90D48887142B371800E43AB2 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D48886142B371800E43AB2 /* JSONKit.m */; };
@@ -38,6 +39,8 @@
 		907E0D1B142B2E3000637571 /* SearchInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchInputViewController.h; sourceTree = "<group>"; };
 		907E0D1C142B2E3000637571 /* SearchInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchInputViewController.m; sourceTree = "<group>"; };
 		907E0D1D142B2E3000637571 /* SearchInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchInputViewController.xib; sourceTree = "<group>"; };
+		90B4183A142B6E900039E554 /* TwitTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitTableViewCell.h; sourceTree = "<group>"; };
+		90B4183B142B6E900039E554 /* TwitTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitTableViewCell.m; sourceTree = "<group>"; };
 		90D4887E142B334200E43AB2 /* SearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
 		90D4887F142B334200E43AB2 /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
 		90D48880142B334200E43AB2 /* SearchResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultsViewController.xib; sourceTree = "<group>"; };
@@ -107,6 +110,8 @@
 				907E0D04142B2DBB00637571 /* InfoPlist.strings */,
 				907E0D07142B2DBB00637571 /* TwitSearch-Prefix.pch */,
 				907E0D08142B2DBB00637571 /* main.m */,
+				90B4183A142B6E900039E554 /* TwitTableViewCell.h */,
+				90B4183B142B6E900039E554 /* TwitTableViewCell.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -214,6 +219,7 @@
 				90D48881142B334200E43AB2 /* SearchResultsViewController.m in Sources */,
 				90D48887142B371800E43AB2 /* JSONKit.m in Sources */,
 				90D48895142B3F0700E43AB2 /* WebViewController.m in Sources */,
+				90B4183C142B6E900039E554 /* TwitTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -280,6 +286,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TwitSearch/TwitSearch-Prefix.pch";
 				INFOPLIST_FILE = "TwitSearch/TwitSearch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -293,6 +300,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TwitSearch/TwitSearch-Prefix.pch";
 				INFOPLIST_FILE = "TwitSearch/TwitSearch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
