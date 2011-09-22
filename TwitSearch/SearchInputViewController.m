@@ -12,6 +12,7 @@
 @implementation SearchInputViewController
 
 @synthesize searchTextField = _searchTextField;
+@synthesize searchTerm = _searchTerm;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -25,6 +26,7 @@
 - (void)dealloc
 {
     self.searchTextField = nil;
+    self.searchTerm = nil;
     
     [super dealloc];
 }
@@ -47,6 +49,7 @@
     [self.searchTextField becomeFirstResponder];
     self.searchTextField.delegate = self;
     self.title = @"Search";
+    self.searchTextField.text = self.searchTerm;
 }
 
 - (void)viewDidUnload
@@ -69,7 +72,8 @@
     if ([textField.text length] > 0)
     {
         SearchResultsViewController *resultsViewController = [[SearchResultsViewController alloc] initWithNibName:@"SearchResultsViewController" bundle:nil];
-        resultsViewController.searchTerm = textField.text;
+        self.searchTerm = textField.text;
+        resultsViewController.searchTerm = self.searchTerm;
         [self.navigationController pushViewController:resultsViewController animated:YES];
         [resultsViewController release]; resultsViewController = nil;
     }

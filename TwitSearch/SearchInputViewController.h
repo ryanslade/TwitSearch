@@ -12,6 +12,7 @@
 @interface SearchInputViewController : UIViewController <UITextFieldDelegate>
 
 @property (nonatomic, retain) IBOutlet UITextField *searchTextField;
+@property (nonatomic, retain) NSString *searchTerm;
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
 
