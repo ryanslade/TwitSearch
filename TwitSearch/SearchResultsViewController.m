@@ -49,7 +49,6 @@
 
 - (void) getTweets 
 {
-    sleep(5);
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://search.twitter.com/search.json?q=%@", self.searchTerm]];
     
     NSString *JSONString = [[NSString alloc] initWithContentsOfURL:url];
@@ -144,6 +143,9 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell.textLabel.font = [UIFont fontWithName:@"Helvetica" size:14];
+        cell.textLabel.lineBreakMode = UILineBreakModeWordWrap;
+        cell.textLabel.numberOfLines = NSIntegerMax;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
