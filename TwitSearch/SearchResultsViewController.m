@@ -20,6 +20,7 @@
 
 @synthesize searchTerm = _searchTerm;
 @synthesize twits = _twits;
+@synthesize operationQueue = _operationQueue;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -34,6 +35,7 @@
 {
     self.twits = nil;
     self.searchTerm = nil;
+    self.operationQueue = nil;
     [super dealloc];
 }
 
@@ -47,12 +49,18 @@
 
 #pragma mark - View lifecycle
 
-- (void) getTweets 
+- (void) refreshTwits
 {
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://search.twitter.com/search.json?q=%@", self.searchTerm]];
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^
+     {
+         [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
+     }];
     
+    sleep(5);
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://search.twitter.com/search.json?q=%@", self.searchTerm]];
     NSString *JSONString = [[NSString alloc] initWithContentsOfURL:url];
-     
+    
     if ([JSONString length] == 0)
     {
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"There was an error retrieving your twits" delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil, nil];
@@ -64,6 +72,13 @@
     [JSONString release]; JSONString = nil;
     
     self.twits = [JSONData valueForKey:@"results"];
+    
+    [[NSOperationQueue mainQueue] addOperationWithBlock:^
+    {
+        [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+        [self.tableView reloadData];
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }];
 }
 
 - (void)viewDidLoad
@@ -74,14 +89,15 @@
     
     self.title = self.searchTerm;
     
-    [self getTweets];
-}
-
-- (void) refreshTwits
-{
-    [self getTweets];
-    [self.tableView reloadData];
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    if (!self.operationQueue)
+    {
+        self.operationQueue = [[NSOperationQueue alloc] init];
+        self.operationQueue.maxConcurrentOperationCount = 2;
+    }
+    
+    [self.operationQueue addOperationWithBlock:^{
+        [self refreshTwits];
+    }];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

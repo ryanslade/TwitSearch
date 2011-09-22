@@ -12,5 +12,6 @@
 @interface SearchResultsViewController : UITableViewController <UIAlertViewDelegate>
 
 @property (nonatomic, retain) NSString *searchTerm;
+@property (nonatomic, retain) NSOperationQueue *operationQueue;
 
 @end
