@@ -14,8 +14,13 @@
 		907E0D09142B2DBB00637571 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 907E0D08142B2DBB00637571 /* main.m */; };
 		907E0D0C142B2DBB00637571 /* TwitSearchAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 907E0D0B142B2DBB00637571 /* TwitSearchAppDelegate.m */; };
 		907E0D0F142B2DBB00637571 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907E0D0D142B2DBB00637571 /* MainWindow.xib */; };
-		907E0D12142B2DBB00637571 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 907E0D11142B2DBB00637571 /* RootViewController.m */; };
-		907E0D15142B2DBB00637571 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907E0D13142B2DBB00637571 /* RootViewController.xib */; };
+		907E0D1E142B2E3000637571 /* SearchInputViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 907E0D1C142B2E3000637571 /* SearchInputViewController.m */; };
+		907E0D1F142B2E3000637571 /* SearchInputViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907E0D1D142B2E3000637571 /* SearchInputViewController.xib */; };
+		90D48881142B334200E43AB2 /* SearchResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D4887F142B334200E43AB2 /* SearchResultsViewController.m */; };
+		90D48882142B334200E43AB2 /* SearchResultsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90D48880142B334200E43AB2 /* SearchResultsViewController.xib */; };
+		90D48887142B371800E43AB2 /* JSONKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D48886142B371800E43AB2 /* JSONKit.m */; };
+		90D48895142B3F0700E43AB2 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D48893142B3F0700E43AB2 /* WebViewController.m */; };
+		90D48896142B3F0700E43AB2 /* WebViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 90D48894142B3F0700E43AB2 /* WebViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,16 +28,24 @@
 		907E0CFB142B2DBB00637571 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		907E0CFD142B2DBB00637571 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		907E0CFF142B2DBB00637571 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		907E0D03142B2DBB00637571 /* TwitSearch-Info.plist */ = {isa = PBXFileReference; path = "TwitSearch-Info.plist"; sourceTree = "<group>"; };
+		907E0D03142B2DBB00637571 /* TwitSearch-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TwitSearch-Info.plist"; sourceTree = "<group>"; };
 		907E0D05142B2DBB00637571 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		907E0D07142B2DBB00637571 /* TwitSearch-Prefix.pch */ = {isa = PBXFileReference; path = "TwitSearch-Prefix.pch"; sourceTree = "<group>"; };
+		907E0D07142B2DBB00637571 /* TwitSearch-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TwitSearch-Prefix.pch"; sourceTree = "<group>"; };
 		907E0D08142B2DBB00637571 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		907E0D0A142B2DBB00637571 /* TwitSearchAppDelegate.h */ = {isa = PBXFileReference; path = TwitSearchAppDelegate.h; sourceTree = "<group>"; };
+		907E0D0A142B2DBB00637571 /* TwitSearchAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwitSearchAppDelegate.h; sourceTree = "<group>"; };
 		907E0D0B142B2DBB00637571 /* TwitSearchAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwitSearchAppDelegate.m; sourceTree = "<group>"; };
 		907E0D0E142B2DBB00637571 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
-		907E0D10142B2DBB00637571 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
-		907E0D11142B2DBB00637571 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		907E0D14142B2DBB00637571 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		907E0D1B142B2E3000637571 /* SearchInputViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchInputViewController.h; sourceTree = "<group>"; };
+		907E0D1C142B2E3000637571 /* SearchInputViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchInputViewController.m; sourceTree = "<group>"; };
+		907E0D1D142B2E3000637571 /* SearchInputViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchInputViewController.xib; sourceTree = "<group>"; };
+		90D4887E142B334200E43AB2 /* SearchResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchResultsViewController.h; sourceTree = "<group>"; };
+		90D4887F142B334200E43AB2 /* SearchResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchResultsViewController.m; sourceTree = "<group>"; };
+		90D48880142B334200E43AB2 /* SearchResultsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultsViewController.xib; sourceTree = "<group>"; };
+		90D48885142B371800E43AB2 /* JSONKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSONKit.h; sourceTree = "<group>"; };
+		90D48886142B371800E43AB2 /* JSONKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JSONKit.m; sourceTree = "<group>"; };
+		90D48892142B3F0700E43AB2 /* WebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewController.h; sourceTree = "<group>"; };
+		90D48893142B3F0700E43AB2 /* WebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewController.m; sourceTree = "<group>"; };
+		90D48894142B3F0700E43AB2 /* WebViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WebViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +92,8 @@
 		907E0D01142B2DBB00637571 /* TwitSearch */ = {
 			isa = PBXGroup;
 			children = (
-				907E0D0A142B2DBB00637571 /* TwitSearchAppDelegate.h */,
-				907E0D0B142B2DBB00637571 /* TwitSearchAppDelegate.m */,
-				907E0D0D142B2DBB00637571 /* MainWindow.xib */,
-				907E0D10142B2DBB00637571 /* RootViewController.h */,
-				907E0D11142B2DBB00637571 /* RootViewController.m */,
-				907E0D13142B2DBB00637571 /* RootViewController.xib */,
+				90D48889142B376300E43AB2 /* Controllers */,
+				90D48888142B372B00E43AB2 /* View Controllers */,
 				907E0D02142B2DBB00637571 /* Supporting Files */,
 			);
 			path = TwitSearch;
@@ -93,12 +102,48 @@
 		907E0D02142B2DBB00637571 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				90D48884142B370100E43AB2 /* JSONKit */,
 				907E0D03142B2DBB00637571 /* TwitSearch-Info.plist */,
 				907E0D04142B2DBB00637571 /* InfoPlist.strings */,
 				907E0D07142B2DBB00637571 /* TwitSearch-Prefix.pch */,
 				907E0D08142B2DBB00637571 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		90D48884142B370100E43AB2 /* JSONKit */ = {
+			isa = PBXGroup;
+			children = (
+				90D48885142B371800E43AB2 /* JSONKit.h */,
+				90D48886142B371800E43AB2 /* JSONKit.m */,
+			);
+			name = JSONKit;
+			sourceTree = "<group>";
+		};
+		90D48888142B372B00E43AB2 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				907E0D1B142B2E3000637571 /* SearchInputViewController.h */,
+				907E0D1C142B2E3000637571 /* SearchInputViewController.m */,
+				907E0D1D142B2E3000637571 /* SearchInputViewController.xib */,
+				90D4887E142B334200E43AB2 /* SearchResultsViewController.h */,
+				90D4887F142B334200E43AB2 /* SearchResultsViewController.m */,
+				90D48880142B334200E43AB2 /* SearchResultsViewController.xib */,
+				90D48892142B3F0700E43AB2 /* WebViewController.h */,
+				90D48893142B3F0700E43AB2 /* WebViewController.m */,
+				90D48894142B3F0700E43AB2 /* WebViewController.xib */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		90D48889142B376300E43AB2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				907E0D0A142B2DBB00637571 /* TwitSearchAppDelegate.h */,
+				907E0D0B142B2DBB00637571 /* TwitSearchAppDelegate.m */,
+				907E0D0D142B2DBB00637571 /* MainWindow.xib */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +195,9 @@
 			files = (
 				907E0D06142B2DBB00637571 /* InfoPlist.strings in Resources */,
 				907E0D0F142B2DBB00637571 /* MainWindow.xib in Resources */,
-				907E0D15142B2DBB00637571 /* RootViewController.xib in Resources */,
+				907E0D1F142B2E3000637571 /* SearchInputViewController.xib in Resources */,
+				90D48882142B334200E43AB2 /* SearchResultsViewController.xib in Resources */,
+				90D48896142B3F0700E43AB2 /* WebViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -163,7 +210,10 @@
 			files = (
 				907E0D09142B2DBB00637571 /* main.m in Sources */,
 				907E0D0C142B2DBB00637571 /* TwitSearchAppDelegate.m in Sources */,
-				907E0D12142B2DBB00637571 /* RootViewController.m in Sources */,
+				907E0D1E142B2E3000637571 /* SearchInputViewController.m in Sources */,
+				90D48881142B334200E43AB2 /* SearchResultsViewController.m in Sources */,
+				90D48887142B371800E43AB2 /* JSONKit.m in Sources */,
+				90D48895142B3F0700E43AB2 /* WebViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,14 +234,6 @@
 				907E0D0E142B2DBB00637571 /* en */,
 			);
 			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		907E0D13142B2DBB00637571 /* RootViewController.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				907E0D14142B2DBB00637571 /* en */,
-			);
-			name = RootViewController.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -276,6 +318,7 @@
 				907E0D1A142B2DBB00637571 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
