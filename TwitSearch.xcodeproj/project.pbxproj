@@ -1,0 +1,283 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		907E0CFC142B2DBB00637571 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 907E0CFB142B2DBB00637571 /* UIKit.framework */; };
+		907E0CFE142B2DBB00637571 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 907E0CFD142B2DBB00637571 /* Foundation.framework */; };
+		907E0D00142B2DBB00637571 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 907E0CFF142B2DBB00637571 /* CoreGraphics.framework */; };
+		907E0D06142B2DBB00637571 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 907E0D04142B2DBB00637571 /* InfoPlist.strings */; };
+		907E0D09142B2DBB00637571 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 907E0D08142B2DBB00637571 /* main.m */; };
+		907E0D0C142B2DBB00637571 /* TwitSearchAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 907E0D0B142B2DBB00637571 /* TwitSearchAppDelegate.m */; };
+		907E0D0F142B2DBB00637571 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907E0D0D142B2DBB00637571 /* MainWindow.xib */; };
+		907E0D12142B2DBB00637571 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 907E0D11142B2DBB00637571 /* RootViewController.m */; };
+		907E0D15142B2DBB00637571 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 907E0D13142B2DBB00637571 /* RootViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		907E0CF7142B2DBB00637571 /* TwitSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TwitSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		907E0CFB142B2DBB00637571 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		907E0CFD142B2DBB00637571 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		907E0CFF142B2DBB00637571 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		907E0D03142B2DBB00637571 /* TwitSearch-Info.plist */ = {isa = PBXFileReference; path = "TwitSearch-Info.plist"; sourceTree = "<group>"; };
+		907E0D05142B2DBB00637571 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		907E0D07142B2DBB00637571 /* TwitSearch-Prefix.pch */ = {isa = PBXFileReference; path = "TwitSearch-Prefix.pch"; sourceTree = "<group>"; };
+		907E0D08142B2DBB00637571 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		907E0D0A142B2DBB00637571 /* TwitSearchAppDelegate.h */ = {isa = PBXFileReference; path = TwitSearchAppDelegate.h; sourceTree = "<group>"; };
+		907E0D0B142B2DBB00637571 /* TwitSearchAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwitSearchAppDelegate.m; sourceTree = "<group>"; };
+		907E0D0E142B2DBB00637571 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		907E0D10142B2DBB00637571 /* RootViewController.h */ = {isa = PBXFileReference; path = RootViewController.h; sourceTree = "<group>"; };
+		907E0D11142B2DBB00637571 /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		907E0D14142B2DBB00637571 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RootViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		907E0CF4142B2DBB00637571 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				907E0CFC142B2DBB00637571 /* UIKit.framework in Frameworks */,
+				907E0CFE142B2DBB00637571 /* Foundation.framework in Frameworks */,
+				907E0D00142B2DBB00637571 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		907E0CEC142B2DBB00637571 = {
+			isa = PBXGroup;
+			children = (
+				907E0D01142B2DBB00637571 /* TwitSearch */,
+				907E0CFA142B2DBB00637571 /* Frameworks */,
+				907E0CF8142B2DBB00637571 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		907E0CF8142B2DBB00637571 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				907E0CF7142B2DBB00637571 /* TwitSearch.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		907E0CFA142B2DBB00637571 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				907E0CFB142B2DBB00637571 /* UIKit.framework */,
+				907E0CFD142B2DBB00637571 /* Foundation.framework */,
+				907E0CFF142B2DBB00637571 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		907E0D01142B2DBB00637571 /* TwitSearch */ = {
+			isa = PBXGroup;
+			children = (
+				907E0D0A142B2DBB00637571 /* TwitSearchAppDelegate.h */,
+				907E0D0B142B2DBB00637571 /* TwitSearchAppDelegate.m */,
+				907E0D0D142B2DBB00637571 /* MainWindow.xib */,
+				907E0D10142B2DBB00637571 /* RootViewController.h */,
+				907E0D11142B2DBB00637571 /* RootViewController.m */,
+				907E0D13142B2DBB00637571 /* RootViewController.xib */,
+				907E0D02142B2DBB00637571 /* Supporting Files */,
+			);
+			path = TwitSearch;
+			sourceTree = "<group>";
+		};
+		907E0D02142B2DBB00637571 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				907E0D03142B2DBB00637571 /* TwitSearch-Info.plist */,
+				907E0D04142B2DBB00637571 /* InfoPlist.strings */,
+				907E0D07142B2DBB00637571 /* TwitSearch-Prefix.pch */,
+				907E0D08142B2DBB00637571 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		907E0CF6142B2DBB00637571 /* TwitSearch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 907E0D18142B2DBB00637571 /* Build configuration list for PBXNativeTarget "TwitSearch" */;
+			buildPhases = (
+				907E0CF3142B2DBB00637571 /* Sources */,
+				907E0CF4142B2DBB00637571 /* Frameworks */,
+				907E0CF5142B2DBB00637571 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TwitSearch;
+			productName = TwitSearch;
+			productReference = 907E0CF7142B2DBB00637571 /* TwitSearch.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		907E0CEE142B2DBB00637571 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 907E0CF1142B2DBB00637571 /* Build configuration list for PBXProject "TwitSearch" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 907E0CEC142B2DBB00637571;
+			productRefGroup = 907E0CF8142B2DBB00637571 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				907E0CF6142B2DBB00637571 /* TwitSearch */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		907E0CF5142B2DBB00637571 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				907E0D06142B2DBB00637571 /* InfoPlist.strings in Resources */,
+				907E0D0F142B2DBB00637571 /* MainWindow.xib in Resources */,
+				907E0D15142B2DBB00637571 /* RootViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		907E0CF3142B2DBB00637571 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				907E0D09142B2DBB00637571 /* main.m in Sources */,
+				907E0D0C142B2DBB00637571 /* TwitSearchAppDelegate.m in Sources */,
+				907E0D12142B2DBB00637571 /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		907E0D04142B2DBB00637571 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				907E0D05142B2DBB00637571 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		907E0D0D142B2DBB00637571 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				907E0D0E142B2DBB00637571 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		907E0D13142B2DBB00637571 /* RootViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				907E0D14142B2DBB00637571 /* en */,
+			);
+			name = RootViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		907E0D16142B2DBB00637571 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		907E0D17142B2DBB00637571 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		907E0D19142B2DBB00637571 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TwitSearch/TwitSearch-Prefix.pch";
+				INFOPLIST_FILE = "TwitSearch/TwitSearch-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		907E0D1A142B2DBB00637571 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "TwitSearch/TwitSearch-Prefix.pch";
+				INFOPLIST_FILE = "TwitSearch/TwitSearch-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		907E0CF1142B2DBB00637571 /* Build configuration list for PBXProject "TwitSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				907E0D16142B2DBB00637571 /* Debug */,
+				907E0D17142B2DBB00637571 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		907E0D18142B2DBB00637571 /* Build configuration list for PBXNativeTarget "TwitSearch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				907E0D19142B2DBB00637571 /* Debug */,
+				907E0D1A142B2DBB00637571 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 907E0CEE142B2DBB00637571 /* Project object */;
+}
