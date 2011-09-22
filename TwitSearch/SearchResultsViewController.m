@@ -57,7 +57,8 @@
          [UIApplication sharedApplication].networkActivityIndicatorVisible = YES;
      }];
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://search.twitter.com/search.json?q=%@", self.searchTerm]];
+    NSString *urlString = [[NSString stringWithFormat:@"http://search.twitter.com/search.json?q=%@", self.searchTerm] stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL *url = [NSURL URLWithString:urlString];
     NSString *JSONString = [[NSString alloc] initWithContentsOfURL:url];
     
     if ([JSONString length] == 0)
