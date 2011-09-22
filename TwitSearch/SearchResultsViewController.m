@@ -62,22 +62,29 @@
     
     if ([JSONString length] == 0)
     {
-        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"There was an error retrieving your twits" delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil, nil];
-        [alertView show];
-        [alertView release]; alertView = nil;
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^
+         {
+            UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error" message:@"There was an error retrieving your twits" delegate:self cancelButtonTitle:@"Close" otherButtonTitles:nil, nil];
+            [alertView show];
+            [alertView release]; alertView = nil;
+            [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+         }];
+    }
+    else
+    {
+        NSDictionary *JSONData = [JSONString objectFromJSONString];
+        
+        self.twits = [JSONData valueForKey:@"results"];
+        
+        [[NSOperationQueue mainQueue] addOperationWithBlock:^
+         {
+             [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
+             [self.tableView reloadData];
+             [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
+         }];
     }
     
-    NSDictionary *JSONData = [JSONString objectFromJSONString];
     [JSONString release]; JSONString = nil;
-    
-    self.twits = [JSONData valueForKey:@"results"];
-    
-    [[NSOperationQueue mainQueue] addOperationWithBlock:^
-     {
-         [UIApplication sharedApplication].networkActivityIndicatorVisible = NO;
-         [self.tableView reloadData];
-         [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] atScrollPosition:UITableViewScrollPositionTop animated:YES];
-     }];
 }
 
 - (void) refreshTwits
@@ -151,14 +158,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [self.twits count];
-}
-
-- (UIFont*) getDetailFont
-{
-    
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -191,45 +192,6 @@
     
     return detailHeight + textHeight + 10;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 

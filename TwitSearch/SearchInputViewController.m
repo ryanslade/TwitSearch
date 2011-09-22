@@ -77,6 +77,8 @@
         [self.navigationController pushViewController:resultsViewController animated:YES];
         [resultsViewController release]; resultsViewController = nil;
     }
+    
+    return NO;
 }
 
 @end
